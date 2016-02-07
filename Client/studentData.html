@@ -1,0 +1,72 @@
+<form class="ui form" method="POST">
+	<h2 class="ui dividing header" style="font-size: 30px">Add New Student</h2>
+    <h3 id="error" style="color: red"></h3>
+	<div class="field">
+		<label for="name" >Student Name</label>
+        <div class="three fields">
+            <div class="field">
+		<input type="text" name="firstname" id="firstname" placeholder="First Name" #firstName>                
+            </div>
+            <div class="field">
+		<input type="text" name="lastname" id="lastname" placeholder="Last Name" #lastName>                
+            </div>
+        </div>
+	</div>
+    
+    <div class="field">
+        <label>University/College Name</label>
+        <input type="text" id="university" name="#university" #university> 
+    </div>
+	<div class="field">
+		<label for="class">Class And Major Subject</label>
+        <div class="two fields">
+            <div class="field">
+		<input name="class" id="class" placeholder="Enter Class" #className>                
+            </div>
+            <div class="field">
+                <select name="subject" id="subject" class="ui fluid dropdown" #subject>
+                    <option value="">Subject</option>
+                    <option value="Computer-Sci">Computer-Sci</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Maths">Maths</option>
+                    <option value="Statistics">Statistics</option>
+                </select>
+            </div>
+        </div>
+	</div>
+    <div class="field">
+        <label>Roll Number</label>
+        <input type="number" id="rollno" name="rollno" #rollNo>
+    </div>
+    
+    
+	<button class="ui positive right floated button" (click)="addStudent(firstName,lastName,university,className,rollNo,subject)" style="font-size: 18px"> Add Student </button>
+</form>
+<!--Student list Table-->
+
+<h1 style="margin: 90px auto auto 270px">Students List</h1>
+<table class="ui celled table" style="margin: 20px auto 50PX -275px;width: 1250px">
+  <thead>
+    <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>University/College</th>
+    <th>Class</th>
+    <th>Roll No.</th>
+    <th>Subject</th>
+    <th>Joined Date</th>
+    <th>Remove Student</th>
+    <th>Update Student</th>
+
+  </tr>
+  </thead>
+  
+  
+  <tbody *ngFor="#a of students" [students]="a" (deleteStudent)="delete($event)" (UpdateInfo)="updateinfo($event)">
+     Loading..............
+  </tbody>
+
+
+
+</table>

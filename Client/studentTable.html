@@ -1,0 +1,9 @@
+    <td><div class="ui ribbon label" style="font-size: 18px">{{ students.name }}</div></td>
+    <td>{{ students.lastName }}</td>
+    <td>{{ students.university }}</td>
+    <td>{{ students.className }}</td>
+    <td>{{ students.rollNo }}</td>
+    <td>{{ students.subject }}</td>
+    <td>{{ students.id }}</td>
+    <td><button class="ui red button" (click)="delete(students)">Remove Student</button></td>
+    <td><button class="ui blue button" (click)="update(students)">Update Info</button></td>
